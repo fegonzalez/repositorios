@@ -146,11 +146,11 @@ git diff [local-branch] [remote-repo/remote-branch]
 # modify what you’re currently working on. You have to merge it
 # manually into your work when you’re ready.
 
-  git merge [remote-name]
+  git merge [remote-repo/remote-branch]
 
   # e.g.
   >> git fetch origin
-  >> git merge origin
+  >> git merge origin/master
 
 # b) pull
 
