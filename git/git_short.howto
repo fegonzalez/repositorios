@@ -1,0 +1,323 @@
+
+
+# 1 .ignore file
+#
+# 1.1 update the ignored files
+
+
+# 2 Repository management
+#
+# 2.1 Creating a local repository (at GitHub server & local copy)
+#
+# 2.2 Fork & Clone a repository from a repository created at GitHub server
+#
+# 2.3 Add a remote repo
+
+
+# 3 PULL commands
+#
+# 3.1 See the differences between local and remote repositories
+#
+# 3.2 Get updates from remote repository
+#
+# 3.3 Overwrite local files with the files in the repository.
+
+
+# 4 PUSH commands
+#
+# 4.1 Basic push commands
+#
+# 4.2 Example of a typical push operation (to 'master' branch)
+#
+# 4.3 add
+#
+# 4.4 commit
+#     4.4.1 Rewriting history - Fixing commits
+
+
+# 5 Getting info
+#
+# 5.1 git status
+#
+# 5.2 git log (viewing the Commit History)
+#
+# 5.3 git config (Local repository)
+#
+# 5.4 Remote info
+
+
+# Appendix I - Doc. references
+
+
+
+################################################################################
+# 1 .ignore file
+################################################################################
+
+# 1.1 update the ignored files
+
+git rm -r --cached .
+git add .
+git commit -m "fixed untracked files"
+
+
+################################################################################
+# 2 Repository management
+################################################################################
+
+#-------------------------------------------------------------------------------
+# 2.1 Creating a local repository (at GitHub server & local copy)
+#-------------------------------------------------------------------------------
+
+# e.g. named "neuroscience"
+
+# step 1) create a new repository on the command line
+mkdir neuroscience
+echo "# neuroscience" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/your_user_name_here/neuroscience.git
+
+# step 2) create the repository in the githubweb
+  https://github.com/fegonzalez/neuroscience.git
+
+# step 3) push the initial local repository
+git push -u origin master
+
+
+# …or push an existing repository from the command line
+
+git remote add origin https://github.com/fegonzalez/neuroscience.git
+git push -u origin master
+
+
+#-------------------------------------------------------------------------------
+# 2.2 Fork & Clone a repository from a repository created at GitHub server
+#-------------------------------------------------------------------------------
+
+# 1.- Go to the repo at github and press Fork button
+# 2.- Cloning the repository into the current directory.
+
+# git clone <repo>
+# git clone <repo> <directory>
+
+git clone https://github.com/fegonzalez/ProgrammingAssignment2
+
+
+#-------------------------------------------------------------------------------
+# 2.3 Add a remote repo
+#-------------------------------------------------------------------------------
+
+git remote add origin https://github.com/your_user_name_here/neuroscience.git
+
+
+################################################################################
+# 3 PULL commands
+################################################################################
+
+#-------------------------------------------------------------------------------
+# 3.1 See the differences between local and remote repositories
+#-------------------------------------------------------------------------------
+
+git diff [local-branch] [remote-repo/remote-branch]
+
+    # e.g.
+    >> git branch
+    * master
+    >> git remote
+    origin
+    # thus: branch name is master, remote repository name is origin 
+    git diff master origin/master
+
+#-------------------------------------------------------------------------------
+# 3.2 Get updates from remote repository
+#-------------------------------------------------------------------------------
+
+# a) fetch & merge
+
+  git fetch [remote-name]
+
+# downloads all the new data to your local repository
+#
+# but, it doesn’t automatically merge it with any of your work or
+# modify what you’re currently working on. You have to merge it
+# manually into your work when you’re ready.
+
+  git merge [remote-name]
+
+  # e.g.
+  >> git fetch origin
+  >> git merge origin
+
+# b) pull
+
+  git pull [remote-name]    # pull = fetch & merge
+
+# Fetch the specified remote’s copy of the current branch and immediately merge
+# it into the local copy. This is the same as git fetch <remote> followed by
+# git merge origin/<current-branch>.
+
+  # e.g.
+  >> git pull origin
+
+#-------------------------------------------------------------------------------
+# 3.3 Overwrite local files with the files in the repository
+#-------------------------------------------------------------------------------
+
+# you want to overwrite only one file:
+git fetch
+ git checkout origin/master <filepath>
+
+# If you want to overwrite all changed files:
+git fetch
+git reset --hard origin/master
+
+
+
+################################################################################
+# 4 PUSH commands
+################################################################################
+
+#-------------------------------------------------------------------------------
+# 4.1 Basic push commands
+#-------------------------------------------------------------------------------
+
+>> git push [nombre-remoto][nombre-rama].
+
+# Push the specified branch to <remote>, along with all of the necessary
+# commits and internal objects. This creates a local branch in the destination
+# repository.
+
+>> git push <remote> --all
+
+# Push all of your local branches to the specified remote.
+
+>> git push <remote> --tags
+
+# Tags are not automatically pushed when you push a branch or use the --all
+# option. The --tags flag sends all of your local tags to the remote
+# repository.
+
+
+#-------------------------------------------------------------------------------
+# 4.2 Example of a typical push operation (to 'master' branch)
+#-------------------------------------------------------------------------------
+
+# a) fetch & rebase
+
+git checkout master
+git add -A
+git commit -m "commit msg"
+
+git fetch <repo_name> master
+git rebase -i <repo_name>/master
+  # Squash commits, fix up commit messages etc.
+
+git push <repo_name> master
+
+
+# b) pull
+
+git checkout master
+git add -A
+git commit -m "commit msg"
+
+git pull --rebase <repo_name>
+  # Current branch master is up to date.
+
+git push <repo_name> master
+
+
+#-------------------------------------------------------------------------------
+# 4.3 add
+#-------------------------------------------------------------------------------
+
+#WARNING  You should do this before committing
+
+>> git add <file> 	      	# adds file
+>> git add <directoryname>
+>> git add .			# adds all new files
+    
+>> git add -u	# updates tracking for files that changed names or were deleted
+
+>> git add -A 	# does both of the previous
+
+
+#-------------------------------------------------------------------------------
+# 4.4 commit
+#-------------------------------------------------------------------------------
+
+>> git commit -m "message" # message = useful description of what you did
+
+
+# 4.4.1 Rewriting history - Fixing commits  [3]
+
+>> git commit --amend
+
+# Combine the staged changes with the previous commit and replace the previous
+# commit with the resulting snapshot. Running this when there is nothing staged
+# lets you edit the previous commit’s message without altering its snapshot.
+
+# WARNING:  Don’t Amend Public Commits !!!
+
+
+
+################################################################################
+# 5 Getting info
+################################################################################
+
+# 5.1 git status
+
+>> git status
+
+
+#-------------------------------------------------------------------------------
+# # 5.2 git log (viewing the Commit History)
+#-------------------------------------------------------------------------------
+
+(http://git-scm.com/book/it/v2/Git-Basics-Viewing-the-Commit-History)
+
+>> git log --oneline
+
+>> git log --stat   # --stat : to see some abbreviated stats for each commit
+
+>> git log -p -2    # -p : shows the difference introduced in each commit.
+       	      	    # -2 : number of commits to show
+
+>> git log --pretty=oneline   # --pretty. This option changes the log output to
+			      # formats other than the default
+
+
+
+#-------------------------------------------------------------------------------
+# 5.3 git config (Local repository)
+#-------------------------------------------------------------------------------
+
+>> git config --list				# see config
+
+>> git config --global core.editor "emacs"  	# set editor for commits
+
+# Config account
+git config --global user.name "fegonzalez"
+git config --global user.email "fer.gonzalez.rodriguez@gmail.com"
+
+
+#-------------------------------------------------------------------------------
+# 5.4 Remote info
+#-------------------------------------------------------------------------------
+
+git remote -v   # List the remote connections you have to other repositories.
+
+
+
+
+##############################################################################
+# Appendix I - Doc. references 
+##############################################################################
+
+[1] https://www.atlassian.com/git/tutorials/
+
+[2] http://git-scm.com/doc
+
+[3] https://www.atlassian.com/git/tutorials/rewriting-history/git-commit--amend
