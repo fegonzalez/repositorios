@@ -71,25 +71,25 @@ git commit -m "fixed untracked files"
 
 # e.g. named "neuroscience"
 
-# step 1) create a new repository on the command line
-mkdir neuroscience
-echo "# neuroscience" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git remote add origin https://github.com/your_user_name_here/neuroscience.git
+
+# step 1) create a new repository from the command line
+
+>> mkdir neuroscience
+>> echo "# neuroscience" >> README.md 
+>> git init
+>> git add README.md
+>> git commit -m "first commit"
+
 
 # step 2) create the repository in the githubweb
-  https://github.com/fegonzalez/neuroscience.git
 
-# step 3) push the initial local repository
-git push -u origin master
+https://github.com/your_user_name_here/neuroscience.git
 
 
-# …or push an existing repository from the command line
+# step 3) push the new repository from the command line
 
-git remote add origin https://github.com/fegonzalez/neuroscience.git
-git push -u origin master
+>> git remote add origin https://github.com/your_user_name_here/neuroscience.git
+>> git push -u origin master
 
 
 #-------------------------------------------------------------------------------
@@ -102,7 +102,7 @@ git push -u origin master
 # git clone <repo>
 # git clone <repo> <directory>
 
-git clone https://github.com/fegonzalez/ProgrammingAssignment2
+git clone https://github.com/your_user_name_here/ProgrammingAssignment2
 
 
 #-------------------------------------------------------------------------------
@@ -299,8 +299,8 @@ git push <repo_name> master
 >> git config --global core.editor "emacs"  	# set editor for commits
 
 # Config account
-git config --global user.name "fegonzalez"
-git config --global user.email "fer.gonzalez.rodriguez@gmail.com"
+git config --global user.name "your_user_name_here"
+git config --global user.email "your_email_address_here"
 
 
 #-------------------------------------------------------------------------------
