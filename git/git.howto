@@ -231,7 +231,7 @@ git clean -xf # remove also ignored files
 # 2ea1091 HEAD@{0}: commit: cambio file
 # 099eb9d HEAD@{1}: commit: masxsxc
 # f203e11 HEAD@{2}: commit: cambios
-# e73fb80 HEAD@{3}: clone: from https://github.com/fegonzalez/test-repo.git
+# e73fb80 HEAD@{3}: clone: from https://github.com/your_user_name_here/test-repo.git
 
 
 
@@ -307,7 +307,7 @@ remote: Counting objects: 3, done.
 remote: Compressing objects: 100% (3/3), done.
 remote: Total 3 (delta 1), reused 0 (delta 0)
 Unpacking objects: 100% (3/3), done.
-From https://github.com/fegonzalez/test-repo
+From https://github.com/your_user_name_here/test-repo
    4bd41ad..38cb042  master     -> origin/master
 First, rewinding head to replay your work on top of it...
 Fast-forwarded master to 38cb042830a3d9481e2ec12709ca7b7c530d5403.
@@ -330,7 +330,7 @@ remote: Counting objects: 3, done.
 remote: Compressing objects: 100% (3/3), done.
 remote: Total 3 (delta 0), reused 0 (delta 0)
 Unpacking objects: 100% (3/3), done.
-From https://github.com/fegonzalez/test-repo
+From https://github.com/your_user_name_here/test-repo
    2ea1091..4bd41ad  master     -> origin/master
 
 

@@ -107,9 +107,10 @@ git clone https://github.com/your_user_name_here/ProgrammingAssignment2
 
 
 #-------------------------------------------------------------------------------
-# 2.3 Add a remote repo
+# 2.3 Clone a remote repo into a local directory
 #-------------------------------------------------------------------------------
 
+# note.- the local directory (neuroscience in this example), must not exists.
 git remote add origin https://github.com/your_user_name_here/neuroscience.git
 
 
