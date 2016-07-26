@@ -89,7 +89,8 @@ https://github.com/your_user_name_here/neuroscience.git
 # step 3) push the new repository from the command line
 
 >> git remote add origin https://github.com/your_user_name_here/neuroscience.git
->> git push -u origin master
+>> git push -u origin master # -u only valid if the password is stored
+
 
 
 #-------------------------------------------------------------------------------
@@ -183,11 +184,14 @@ git reset --hard origin/master
 # 4.1 Basic push commands
 #-------------------------------------------------------------------------------
 
->> git push [nombre-remoto][nombre-rama].
+>> git push [-u] <nombre-remoto> <nombre-rama>
 
 # Push the specified branch to <remote>, along with all of the necessary
 # commits and internal objects. This creates a local branch in the destination
 # repository.
+#
+# [-u] option: user & password not asked
+
 
 >> git push <remote> --all
 
