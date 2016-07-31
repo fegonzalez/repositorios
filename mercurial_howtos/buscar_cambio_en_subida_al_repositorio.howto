@@ -1,0 +1,31 @@
+
+- hg annotate
+- hg log
+
+[dir_name]
+
+
+-------- Original Message --------
+Subject: 	buscar un cambio en una subida al repositorio Mercurial
+Date: 	Wed, 12 Dec 2012 13:01:36 +0100
+From: 	user_surname, user_name <user@dummy.com>
+To: 	user_surname, user_name <user@dummy.com>
+
+
+my_note: Necesito saber el fichero (i.e. filename.cpp)
+my_note: Necesito un cadena de caracteres que me identifique el cambio
+	 (i.e. change_string_id)
+
+
+[dir_name] hg annotate filename.cpp|grep change_string_id
+
+1617:       bool aux_last_change_string_id_value =
+1617:       irSensorControl.change_string_id;
+1617:       (aux_last_change_string_id_value != the_output_icd.id_value);
+
+
+[dir_name] hg log -r 1617
+changeset:   1617:2ad10c79c15c
+user:        user_name <user@dummy.com>
+date:        Thu Nov 29 07:54:12 2012 +0100
+summary:     dev: Addition of new features, etc, etc

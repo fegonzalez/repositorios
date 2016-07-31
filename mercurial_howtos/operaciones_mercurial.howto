@@ -1,0 +1,37 @@
+
+
+//-------------------------------------------------------------------------
+Recuperar una determinada versión de un un fichero subido al repositorio
+//-------------------------------------------------------------------------
+
+
+hg revert -r xxx filename
+
+where xxx is the revision number (changeset)
+
+
+//-------------------------------------------------------------------------
+ buscar un cambio en una subida al repositorio Mercurial
+//-------------------------------------------------------------------------
+
+Necesito saber el fichero
+NEcesito un cadena de caracteres que me identifique el cambio
+
+[dir user system]hg annotate Hmsystem.cpp|grep test2find
+
+1617:       bool aux_last_test2find_value =
+1617:       systemVisualControl.test2find;
+
+
+//-------------------------------------------------------------------------
+ buscar un cambio en una subida al repositorio Mercurial (2)
+//-------------------------------------------------------------------------
+
+[dir user system]hg log -r 1617
+changeset:   1617:2ad10c79c15c
+user:        user_name user_surname <user_name@maildir.es>
+date:        Thu Nov 29 07:54:12 2012 +0100
+summary: dev: Addition of new  sensor features: .... ....
+	
+user_name user_surname
+kkkk 

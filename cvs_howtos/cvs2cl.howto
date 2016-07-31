@@ -1,0 +1,26 @@
+
+Ejecutar la aplicación "cvs2cl" para obtener en un fichero SOLAMENTE los cambios de cada día, mostrando
+justo la información que queremos: fecha, autor, carpeta, comentario.
+
+             cvs2cl -l "-d"">today 00:00"
+
+Ejemplo:
+
+Desde /sistemas/
+
+Ejecutamos:    
+                      cvs2cl -l "-d"">today 00:00"
+
+
+Crea fichero Changelog con el siguiente contenido:
+
+
+2010-07-15 13:17  user_one
+
+  * system1/: extra_checked_vars.dat, dummy.cpp,
+    dummy.cpp, variable_functors.h: Working ok
+
+2010-07-15 12:50  user_two
+
+  * system1/dummy.cpp:
+    Test one fixed.

@@ -1,0 +1,37 @@
+
+Para hacer la rama, siguiendo el tutorial, hay que dar los siguientes pasos:
+
+    * Marcar la versión actual con una etiqueta. No es obligatorio,
+      pero de esta forma se puede obtener la versión de justo antes de
+      hacer la nueva rama. ç Situándose lo más arriba posible en la
+      estructura guardada en cvs, se ejecuta el comando
+
+         cvs tag etiqueta_antes_rama
+
+    * Luego se crea la rama, dándole una nueva etiqueta. El comando es
+
+      cvs tag -b etiqueta_rama
+
+    * Ya está creada. El que quiera trabajar en la nueva rama debe
+      sacar esta versión con el comando
+
+      cvs update -r etiqueta_rama
+
+      Todo los commit y update que haga desde este momento, se harán
+      en la rama nueva.
+
+    * Para volver a la rama principal, se ejecuta el comando
+
+      cvs update -A
+
+      La opción -A saca los ficheros de la rama por defecto de CVS,
+      que si no hemos hecho nada en contra, es la rama principal.  No
+      podemos hacer cvs update -r etiqueta_antes_rama porque nos
+      sacaría justo los ficheros con esa etiqueta y no los más
+      modernos de esa rama.
+
+Podemos cambiar de rama siempre que nos interese. Me ha llamado la
+atención al hacerlo que si en una rama borro ficheros y en la otra no,
+los ficheros se me borran o recuperan según hago update de una rama o
+de otra.
+

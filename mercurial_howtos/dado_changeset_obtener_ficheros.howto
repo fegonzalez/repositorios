@@ -1,0 +1,29 @@
+#dado  changeset 1252:::loquesea
+hg log -v -r 1252
+
+
+el resultado es como este:
+
+
+
+
+changeset:   1252:5dd8f89572ca
+user:        user_name user_surname <user_name@maildir.es>
+date:        Mon Jun 24 12:31:30 2013 +0200
+files: doc/release/release.tex doc/systems/abc/device.txt
+systems/sysname/abc_module.cpp
+systems/sysname/abc_module.h
+Recorder update. New real system in, old dummy.
+
+Details: according to the Arequirements ...
+
+Implementation.
+
+A new class (Mass) has been implemented for the device:
+
+/*!\class Dummyclass  abc_module.h
+
+   \brief Manager for a ...
+
+   - never occurs an I/O failure.
+*/

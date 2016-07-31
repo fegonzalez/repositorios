@@ -1,0 +1,9 @@
+hg diff 
+hg diff -r 2356 -r 2407  nombre_fichero 3   -r  == revision
+
+
+
+Example.- 
+
+[dir user system]hg diff -r 2356 -r 2407 file.cpp
+

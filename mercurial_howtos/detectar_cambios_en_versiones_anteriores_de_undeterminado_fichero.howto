@@ -1,0 +1,6 @@
+ejemplo  fichero: system.cpp
+
+[dir user system]  hg log -l 3 system.cpp
+
+[dir user system]  hg diff -r 1666 system.cpp
+
