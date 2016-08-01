@@ -94,24 +94,41 @@ https://github.com/your_user_name_here/neuroscience.git
 
 
 #-------------------------------------------------------------------------------
-# 2.2 Fork & Clone a repository from a repository created at GitHub server
+# 2.2 Add a remote repo
 #-------------------------------------------------------------------------------
 
-# 1.- Go to the repo at github and press Fork button
-# 2.- Cloning the repository into the current directory.
-
-# git clone <repo>
-# git clone <repo> <directory>
-
-git clone https://github.com/your_user_name_here/ProgrammingAssignment2
+step 1: if necessary, fork a repository from a repository created at
+     	GitHub server:
+	
+>>  Go to the repo at github and press Fork button
 
 
-#-------------------------------------------------------------------------------
-# 2.3 Clone a remote repo into a local directory
-#-------------------------------------------------------------------------------
+step 2: add the remote repository in the local host
 
-# note.- the local directory (neuroscience in this example), must not exists.
-git remote add origin https://github.com/your_user_name_here/neuroscience.git
+WARNING
+The local directory (reponame in this example) must not exists.
+
+# 2.2.1. <git clone> : clone to a local directory that doesn't has a .git/ in it
+
+# a) git clone <repo>
+#
+# the local repository name is the same as in the remote host, and
+# the content of the <repo> is the same
+#
+
+  >> git clone https://github.com/your_user_name_here/reponame.git
+
+# b) git clone <repo> <directory-name>
+#
+# the local repository name is set to <directory-name>, and
+# the content of the <repo> is the same
+
+  >> git clone https://github.com/your_user_name_here/reponame.git dest_dir
+
+
+# 2.2.2. <git remote add> : clone to a local dir that already has a .git/ in it
+ 
+  >> git remote add origin https://github.com/your_user_name_here/reponame.git
 
 
 ################################################################################
