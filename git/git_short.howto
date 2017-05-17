@@ -44,6 +44,11 @@
 # 5.4 Remote info
 
 
+# 6 Managing errors
+#
+# 6.1 "error: The requested URL returned error: 403 Forbidden while accessing"
+
+
 # Appendix I - Doc. references
 
 
@@ -184,7 +189,8 @@ git diff [local-branch] [remote-repo/remote-branch]
 
 # you want to overwrite only one file:
 git fetch
- git checkout origin/master <filepath>
+git checkout origin/master <filepath>
+git checkout HEAD <filepath>
 
 # If you want to overwrite all changed files:
 git fetch
@@ -223,6 +229,9 @@ git reset --hard origin/master
 #-------------------------------------------------------------------------------
 # 4.2 Example of a typical push operation (to 'master' branch)
 #-------------------------------------------------------------------------------
+
+#\warning <repo_name>= result of "git remote"; tipically "origin"
+
 
 # a) fetch & rebase
 
@@ -330,6 +339,20 @@ git config --global user.email "your_email_address_here"
 git remote -v   # List the remote connections you have to other repositories.
 
 
+#################################################################################
+# 6 Managing errors
+#################################################################################
+
+# 6.1 "error: The requested URL returned error: 403 Forbidden while accessing"
+
+SOLUTION
+
+(i.e. user = fegonzalez)
+(i.e. repo = pascal)
+
+git remote set-url origin https://user@github.com/user/repo.git
+
+# now check ./git/config; [remote "origin"] section
 
 
 ##############################################################################
@@ -341,3 +364,8 @@ git remote -v   # List the remote connections you have to other repositories.
 [2] http://git-scm.com/doc
 
 [3] https://www.atlassian.com/git/tutorials/rewriting-history/git-commit--amend
+
+
+
+
+git remote set-url origin https://fegonzalez@github.com/fegonzalez/python.git
