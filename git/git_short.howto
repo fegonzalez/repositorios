@@ -10,6 +10,8 @@
 # 2.1 Creating a local repository (at GitHub server & local copy)
 #
 # 2.2 Add a remote repo
+#
+# 2.3 Valid config file (./git/config)
 
 
 # 3 PULL commands
@@ -132,6 +134,28 @@ The local directory (reponame in this example) must not exists.
 # 2.2.2. <git remote add> : clone to a local dir that already has a .git/ in it
  
   >> git remote add origin https://github.com/your_user_name_here/reponame.git
+
+
+#-------------------------------------------------------------------------------
+# 2.3 Valid config file (./git/config)
+#-------------------------------------------------------------------------------
+
+# USERNAME_HERE: use the actual value
+
+# REPONAME_HERE: use the actual value  (e.g. cpp)
+
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "origin"]
+	fetch = +refs/heads/*:refs/remotes/origin/*
+	url = https://github.com/USERNAME_HERE/REPONAME_HERE
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+
 
 
 ################################################################################
