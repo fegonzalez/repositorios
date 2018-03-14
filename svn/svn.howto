@@ -1,0 +1,22 @@
+
+
+
+
+# svn copy
+
+  Copiar una rama de repositorio.
+
+  Takes a snapshot of the repository and assigns a name. This can be
+  done at any directory branch.
+
+
+  Command:
+  
+  svn copy http://host/repos/poject/trunk http://host/repos/poject/tags/Tagname
+           -m "comments here"
+
+  [ Example 
+  >>svn copy
+  	https://atmsvn.indra.es/TWR/branches/dev/Version_rman_sesar2020_faseI
+  	https://atmsvn.indra.es/TWR/branches/dev/Version_rman_sesar2020_faseI_schedulingCOT
+	-m "nueva rama ..."
