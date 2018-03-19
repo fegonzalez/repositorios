@@ -49,7 +49,7 @@
 # 6 Managing errors
 #
 # 6.1 "error: The requested URL returned error: 403 Forbidden while accessing"
-
+# 6.2 "error: The requested URL returned error: 407 while accessing https"
 
 # Appendix I - Doc. references
 
@@ -374,10 +374,21 @@ SOLUTION
 (i.e. user = fegonzalez)
 (i.e. repo = pascal)
 
-git remote set-url origin https://user@github.com/user/repo.git
+git remote set-url origin https://user@github.com/user/pascal.git
 
 # now check ./git/config; [remote "origin"] section
 
+
+# 6.2 "error: The requested URL returned error: 407 while accessing https"
+
+
+SOLUTION
+
+# ./git/config; [remote "origin"] section
+
+
+  url = https://fegonzalez@github.com/fegonzalez/pascal.git    # OK
+# url = https://github.com/fegonzalez/pascal                   # ERROR
 
 ##############################################################################
 # Appendix I - Doc. references 
