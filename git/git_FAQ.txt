@@ -1,0 +1,30 @@
+
+Q1) Error "Received HTTP code 407 from proxy after CONNECT"
+
+
+################################################################################
+# Q1) Error "Received HTTP code 407 from proxy after CONNECT"
+################################################################################
+
+>> git push -u origin master
+
+   #git user = PEPE
+   #current (git) directory = PEPE_libs
+
+fatal: unable to access 'https://github.com/PEPE/PEPE_libs.git/': Received HTTP code 407 from proxy after CONNECT
+
+
+# Error cause: using system proxy for internet connections
+
+# Solution: (temporary) solution only for the "git push" action:
+
+>> git config --global --unset http.proxy
+>> git config --global --unset https.proxy
+
+>> git push -u origin master
+
+
+   Now it works !
+
+
+################################################################################
