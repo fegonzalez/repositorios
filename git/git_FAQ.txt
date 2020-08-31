@@ -21,6 +21,15 @@ fatal: unable to access 'https://github.com/PEPE/PEPE_libs.git/': Received HTTP 
 >> git config --global --unset http.proxy
 >> git config --global --unset https.proxy
 
+
+[ optional, if the two above aren't enough
+
+  >> git config --global https.proxy proxy.XXX.YY:8080
+
+     XXX:YY : my proxy address
+]
+
+
 >> git push -u origin master
 
 
